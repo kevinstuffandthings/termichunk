@@ -1,0 +1,16 @@
+language: ruby
+rvm:
+- 2.4
+- 2.5
+- 2.6
+script:
+- bundle exec rspec
+deploy:
+  provider: rubygems
+  api_key:
+    secure: jUWa2Jx0HRVv7Dl0zYPTskHQ+RJGy2TUcBWOjyFbBUbeDKiRh8J/NnbMuCOvmL94htSaFk5lcs6k74Itu6jW12+KyT98OAnOardFPFuI0cHHhIMEhF6ms8EhyOCZ0vvR9zav11gfNzyF716qO09DQSDuoKWWNdhrYj8a5paLdbHuRqQiw3YUmnjVQ/v9SPYaZ7ziXC4X4tBxQhK2ujNsNfztSVrpYb6pnsXnt+hFQOnskzi0+er4854iymykeyNVgB71KgivrE3T55ZTXPPglshsZQE7M7FlYA5L3bwzR7SlA202yFYHB3hUN3obwO3BjO4OiAdKQnSosBHaXI13ZvCOz02AfEJhwoxkBXw1/2CvSQ12QQPVgqkpxWY03h+URk+gGHCV+JaqZPCV9excmVWg/IOQou0IJ6h84VFViyVc2aFVN2AIdoaG3NsppbV3j4VuLG6J2VVpNmUzN3pGgi5YSjVq9Hp+huXZFfWpnUgAxc680hKgcFajE3JNANG+NbNEeoDmITvZyV5kvJklgUKPsl2wNk+wY/GGrSBgNOVlyXqTWLZb/8Z/cSrN5DEc6D5BIS/SG95wlCRT8jUqbyEPjT+H77TH2ySfwWZzblLqbIxaLiZr3hX16oMdUx7Cya5LKLFgQBpU6cFUxvZX7SqHwjk1vnuG592Kxd9GkX4=
+  gem: termichunk
+  on:
+    tags: true
+    repo: kevinstuffandthings/termichunk
+  skip_cleanup: 'true'
