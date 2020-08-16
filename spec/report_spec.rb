@@ -40,6 +40,13 @@ module TermiChunk
       EOF
     end
 
+    it 'can make an empty report' do
+      expect(result).to eq <<~EOF
+        ┌─[ Some Report ]──
+        └─[ Some Report ]──
+      EOF
+    end
+
     context 'padding' do
       let(:contents) { "Line 1 has some stuff in it\nLine 2 has less" }
       let(:subject) { described_class.new(title: 'Some Report', padding: padding) { |r| r << contents } }
@@ -81,6 +88,18 @@ module TermiChunk
             └─[ Some Report ]───────────────────
           EOF
         end
+
+        context 'empty' do
+          let(:subject) { described_class.new(title: 'Some Report', padding: padding) }
+
+          it 'can make an empty report' do
+            expect(result).to eq <<~EOF
+              ┌─[ Some Report ]────
+              │
+              └─[ Some Report ]────
+            EOF
+          end
+        end
       end
 
       context '3' do
@@ -99,6 +118,20 @@ module TermiChunk
             │
             └─[ Some Report ]─────────────────────
           EOF
+        end
+
+        context 'empty' do
+          let(:subject) { described_class.new(title: 'Some Report', padding: padding) }
+
+          it 'can make an empty report' do
+            expect(result).to eq <<~EOF
+              ┌─[ Some Report ]────────
+              │
+              │
+              │
+              └─[ Some Report ]────────
+            EOF
+          end
         end
       end
     end

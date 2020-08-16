@@ -35,13 +35,13 @@ module TermiChunk
     # @return [String]
     def to_s
       y = padding.times.map { Y }
-      [titlebar(TL), *y, body, *y, titlebar(BL)].compact.join("\n")
+      [titlebar(TL), *y, body, *(y if body), titlebar(BL)].compact.join("\n")
     end
 
     private
 
     def body
-      rows.map { |l| "#{Y} #{' ' * padding}#{l.chomp}" }.join("\n")
+      rows.map { |l| "#{Y} #{' ' * padding}#{l.chomp}" }.join("\n") unless rows.length.zero?
     end
 
     def titlebar(corner)
@@ -51,7 +51,7 @@ module TermiChunk
     end
 
     def width
-      [rows.map(&:length).max + 2, title.length + 6].max
+      [(rows.map(&:length).max || 0) + 2, title.length + 6].max
     end
   end
 end
