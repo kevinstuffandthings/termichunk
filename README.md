@@ -1,4 +1,4 @@
-# TermiChunk [![Build Status](https://travis-ci.com/kevinstuffandthings/termichunk.svg?branch=master)](https://travis-ci.com/kevinstuffandthings/termichunk) [![Gem Version](https://badge.fury.io/rb/termichunk.svg)](https://badge.fury.io/rb/termichunk)
+# TermiChunk ![Build Status](https://github.com/kevinstuffandthings/termichunk/actions/workflows/ruby.yml/badge.svg) [![Gem Version](https://badge.fury.io/rb/termichunk.svg)](https://badge.fury.io/rb/termichunk)
 
 Take large chunks of text that might otherwise run together, and organize them neatly within your terminal output.
 
